@@ -109,12 +109,8 @@ __author__ = "Hubert Pham"
 __version__ = "0.2.11"
 __docformat__ = "restructuredtext en"
 
-# attempt to import PortAudio
-try:
-    from . import _portaudio as pa
-except ImportError:
-    print("Could not import the PyAudio C module 'portaudio'.")
-    raise
+# any errors will be handled by
+import _portaudio as pa
 
 ############################################################
 # GLOBALS
