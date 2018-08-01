@@ -8,6 +8,7 @@ import wave
 
 # https://docs.python.org/3/library/aifc.html
 # https://docs.python.org/3/library/wave.html
+# AIFF is currently broken: Problem with the library loading?
 
 
 class AudioFormat:
@@ -37,8 +38,10 @@ supportedFormats = [WAV, AIFF]
 
 def bytesEqual(check, array):
     for i, j in enumerate(array):
+        # accounts for wildcards
         if check[i] == -1 or array[i] == -1:
             continue
+
         if array[i] != check[i]:
             return False
 

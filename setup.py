@@ -5,6 +5,6 @@ setup(name='pysounds',
       description='A high level sounds api for python',
       url='https://github.com/HelloWorld-py/PySounds',
       author='Jacob Tsekrekos',
-      author_email='37763237+HelloWorld-py@users.noreply.github.com',
+      author_email='jdtsekrekos@live.com',
       install_requires=['pyaudio'],
       packages=['pysounds', 'pysounds/pyaudio'])
