@@ -5,8 +5,8 @@ import threading
 import time
 
 from .WaveForm import WaveForm as _WaveForm
-from .pyaudio import PyAudio as _PyAudio
-from .pyaudio import get_format_from_width as _get_format
+from ._pyaudio import PyAudio as _PyAudio
+from ._pyaudio import get_format_from_width as _get_format
 
 CHUNK_SIZE = 1024
 
