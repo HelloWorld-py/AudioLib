@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 
-long_description = open("README.md", "r").read()
+long_description = open("README.rst", "r").read()
 
 setup(name='PySounds',
 
-      version='1.0.0b2',
+      version='1.0.0b3',
 
       description='A high level sounds api for python',
 
       long_description=long_description,
-      long_description_content_type='text/markdown',
+      long_description_content_type='text/x-rst',
 
       url='https://github.com/HelloWorld-py/PySounds',
       author='Jacob Tsekrekos',
