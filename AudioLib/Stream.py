@@ -79,12 +79,12 @@ class Stream:
     @property
     def time(self):
         ":returns current time in seconds"
-        return round(self.__waveform.position / s.__waveform.framerate, 2)
+        return round(self.__waveform.position / self.__waveform.framerate, 2)
 
     @property
     def totalTime(self):
         ":returns total time in seconds"
-        return round(self.__waveform.frames / s.__waveform.framerate, 2)
+        return round(self.__waveform.frames / self.__waveform.framerate, 2)
 
     def __del__(self):
         self.stop()
