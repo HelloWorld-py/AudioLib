@@ -1,5 +1,5 @@
 ========
-PySounds
+AudioLib
 ========
 
 A high level sound playing library for python.

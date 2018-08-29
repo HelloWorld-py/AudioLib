@@ -5,15 +5,15 @@ from ..WaveForm import WaveForm, FormatError, bytesEqual, WAV, AIFF
 class Test_WaveForm(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.WAV = WaveForm("./pysounds/tests/test-sound.wav")
-        cls.AIFF = WaveForm("./pysounds/tests/test-sound.aiff")
+        cls.WAV = WaveForm("./AudioLib/tests/test-sound.wav")
+        cls.AIFF = WaveForm("./AudioLib/tests/test-sound.aiff")
 
     def test_format(self):
         self.assertNotEqual(self.WAV.fileFormat, self.AIFF.fileFormat)
 
     def test_reading(self):
         with self.assertRaises(FormatError):
-            WaveForm("./pysounds/tests/test-sound.mp3")
+            WaveForm("./AudioLib/tests/test-sound.mp3")
 
         self.assertIs(self.WAV.isOpen, False)
 
@@ -35,6 +35,7 @@ class Test_BytesEqual(unittest.TestCase):
         self.assertEqual(bytesEqual(wav1, wav2), True)
         self.assertEqual(bytesEqual(wav1, wav1), True)
         self.assertEqual(bytesEqual(wav1, AIFF.magicNumber), False)
+
 
 if __name__ == "__main__":
     unittest.main()
