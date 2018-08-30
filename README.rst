@@ -1,10 +1,8 @@
-========
 AudioLib
 ========
 
-A high level audio playback library for python.
------------------------------------------------
-This project uses built-in codecs to load a 'waveform', which can then be played back using pyaudio as a backbone.
+*A high level audio playback library for python.*
 
-Current version only supports .wav
-----------------------------------
+This project uses built-in codecs to load a *waveform*, which can then be played back using pyaudio as a backbone.
+
+**Current version only supports .wav**
