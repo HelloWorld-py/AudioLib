@@ -2,7 +2,7 @@ error = None
 
 try:
     from .Stream import Stream
-    from .WaveForm import FormatError
+    from .Errors import FormatError
 except ImportError as e:
     error = e  # str(e.args[0])
 

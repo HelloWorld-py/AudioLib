@@ -1,19 +1,15 @@
 import unittest
-from ..WaveForm import WaveForm, FormatError, bytesEqual, WAV, AIFF
+from ..WaveForm import load, FormatError, bytes_equal, WAV
 
 
 class Test_WaveForm(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.WAV = WaveForm("./AudioLib/tests/test-sound.wav")
-        cls.AIFF = WaveForm("./AudioLib/tests/test-sound.aiff")
-
-    def test_format(self):
-        self.assertNotEqual(self.WAV.fileFormat, self.AIFF.fileFormat)
+        cls.WAV = load("test-sound.wav")
 
     def test_reading(self):
         with self.assertRaises(FormatError):
-            WaveForm("./AudioLib/tests/test-sound.mp3")
+            load("test-sound.mp3")
 
         self.assertIs(self.WAV.isOpen, False)
 
@@ -32,9 +28,8 @@ class Test_BytesEqual(unittest.TestCase):
         wav1 = WAV.magicNumber[:]
         wav2 = wav1[:]
         wav2[4] = 13
-        self.assertEqual(bytesEqual(wav1, wav2), True)
-        self.assertEqual(bytesEqual(wav1, wav1), True)
-        self.assertEqual(bytesEqual(wav1, AIFF.magicNumber), False)
+        self.assertEqual(bytes_equal(wav1, wav2), True)
+        self.assertEqual(bytes_equal(wav1, wav1), True)
 
 
 if __name__ == "__main__":
