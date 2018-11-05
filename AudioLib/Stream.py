@@ -18,7 +18,7 @@ class Stream:
         self.__paused = False
         self.__playing = False
         self.__stopped = True
-        
+
         # ensures the file exists
         open(filename, "rb").close()
         # This may fail, Therefore self.__stream and self.waveform will not be defined
